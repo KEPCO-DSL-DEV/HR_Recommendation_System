@@ -10,10 +10,9 @@ const StyledButton = styled.button`
   color: white;
   outline: none;
   cursor: pointer;
-
-  background: darkgray;
+  background: #d7d7d9;
   &:hover {
-    background: gray;
+    background: #37474f;
   }
 `;
 
