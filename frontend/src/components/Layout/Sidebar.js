@@ -1,7 +1,13 @@
 import logoKepco from 'assets/img/logo/logo_kepco_long.png';
-import sidebarBgImage from 'assets/img/sidebar/sidebar-4.jpg';
+//import sidebarBgImage from 'assets/img/sidebar/sidebar-4.jpg';
 import React from 'react';
-import { MdInsertChart } from 'react-icons/md';
+import {
+  MdInsertChart,
+  MdPerson,
+  MdFlag,
+  MdSettings,
+  MdSearch,
+} from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import {
   // Collapse,
@@ -13,13 +19,18 @@ import {
 import bn from 'utils/bemnames';
 
 const sidebarBackground = {
-  backgroundImage: `url("${sidebarBgImage}")`,
+  //backgroundImage: `url("${sidebarBgImage}")`,
+  //backgroundImage: 'black',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
 };
 
 const navItems = [
-  { to: '/summary', name: '종합 통계', exact: false, Icon: MdInsertChart },
+  { to: '/stat', name: '종합 통계', exact: false, Icon: MdInsertChart },
+  { to: '/talent', name: '인재 추천', exact: false, Icon: MdPerson },
+  { to: '/position', name: '보직 추천', exact: false, Icon: MdFlag },
+  { to: '/setting', name: '보직 설정', exact: false, Icon: MdSettings },
+  { to: '/search', name: '직원 검색', exact: false, Icon: MdSearch },
 ];
 
 const bem = bn.create('sidebar');
@@ -43,7 +54,9 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <aside className={bem.b()} data-image={sidebarBgImage}>
+      <aside
+        className={bem.b()} //data-image={sidebarBgImage}
+      >
         <div className={bem.e('background')} style={sidebarBackground} />
         <div className={bem.e('content')}>
           <Navbar className="text-center">

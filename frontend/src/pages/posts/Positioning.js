@@ -1,11 +1,10 @@
 import React from 'react';
-import Header from '../components/common/Header';
-import SearchBox from '../components/write/SearchBox';
-import ItemList from '../components/write/ItemList';
-import Button from '../components/common/Button';
-import SearchList from '../components/write/SearchList';
-import AbilityGraph from '../components/write/AbilityGraph';
-import Chart from '../components/write/ComparisonChart';
+import SearchBox from '../../components/recommend/SearchBox';
+import DenseTable from '../../components/recommend/RecommendationTable';
+import Button from '../../components/common/Button';
+import SearchList from '../../components/recommend/SearchList';
+import AbilityGraph from '../../components/recommend/AbilityGraph';
+import Chart from '../../components/recommend/ComparisonChart';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -73,7 +72,7 @@ const PostsPosition = () => {
             <h6 className={classes.h6}>추천</h6>
             <AbilityGraph />
             <SearchList />
-            <ItemList />
+            <DenseTable />
           </Paper>
         </Grid>
         <Grid item xs={12}>

@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from '../components/common/Header';
-import SearchBox from '../components/write/SearchBox';
-import ItemList from '../components/write/ItemList';
-import Button from '../components/common/Button';
+import Header from '../../components/common/Header';
+import SearchBox from '../../components/recommend/SearchBox';
+import ItemList from '../../components/recommend/ItemList';
+import Button from '../../components/common/Button';
+import DenseTable from '../../components/recommend/RecommendationTable';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -12,18 +13,23 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 0.5,
   },
+  button: {
+    padding: theme.spacing(2),
+    textAlign: 'right',
+  },
+  h6: {
+    padding: theme.spacing(1),
+    textAlign: 'left',
+    fontWeight: 'bold',
+  },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  button: {
-    padding: theme.spacing(2),
-    textAlign: 'right',
-  },
 }));
 
-const PostsPosition = () => {
+const EmployeeSearch = () => {
   const classes = useStyles();
 
   return (
@@ -34,7 +40,7 @@ const PostsPosition = () => {
             className={classes.paper}
             style={{ backgroundColor: '#1C2F40', color: 'white' }}
           >
-            보직 별 인재상 반영
+            보직, 인재 추천
           </Paper>
         </Grid>
         <Grid item xs={9}>
@@ -42,25 +48,16 @@ const PostsPosition = () => {
             className={classes.paper}
             style={{ backgroundColor: '#D7D7D9', color: 'black' }}
           >
-            보직 추천
+            인재 추천
           </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper className={classes.paper}></Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <SearchBox />
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <ItemList />
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.button}>
-            <Button>변경</Button>
-            <p>
-              <b>(모델생성)</b>
-            </p>
+            <h6 className={classes.h6}>검색 결과</h6>
+            <DenseTable />
           </Paper>
         </Grid>
       </Grid>
@@ -68,4 +65,4 @@ const PostsPosition = () => {
   );
 };
 
-export default PostsPosition;
+export default EmployeeSearch;

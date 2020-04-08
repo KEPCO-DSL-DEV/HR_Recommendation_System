@@ -9,13 +9,14 @@
   left: -$cr-sidebar-width;
   z-index: 5;
   width: $cr-sidebar-width;
-  font-weight: 200;
+  font-weight: bold;
   color: #fff;
+  background-color: #03588C;
   background-position: center center;
   background-size: cover;
   transition: left 0.1s ease-in;
 
-  + .cr-content {
+  +.cr-content {
     transition: margin 0.1s ease-in;
   }
 
@@ -39,8 +40,9 @@
   &::after {
     z-index: 3;
     // sublime light
-    background: theme-color("primary"); /* fallback for old browsers */
-    background: linear-gradient(to bottom, theme-color("primary"), theme-color("secondary"));
+    //background: theme-color("primary");
+    /* fallback for old browsers */
+    //background: linear-gradient(to bottom, theme-color("primary"), theme-color("secondary"));
     opacity: 1;
   }
 
@@ -95,7 +97,7 @@
     left: 0;
     transition: left 0.2s ease-in;
 
-    + .cr-content {
+    +.cr-content {
       margin: 0 0 0 $cr-sidebar-width;
       transition: margin 0.2s ease-in;
     }

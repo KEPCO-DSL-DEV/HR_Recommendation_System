@@ -7,13 +7,15 @@ import componentQueries from 'react-component-queries';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './styles/reduction.scss';
 
-import PostPosition from './pages/PostPosition';
-import PostsPosition from './pages/PostsPosition';
-import WritePosition from './pages/WritePosition';
+const Statistics = React.lazy(() => import('pages/posts/Statistics.js'));
+const Talenting = React.lazy(() => import('pages/posts/Talenting.js'));
+const Positioning = React.lazy(() => import('pages/posts/Positioning.js'));
+const Setting = React.lazy(() => import('pages/posts/Setting.js'));
+const Search = React.lazy(() => import('pages/posts/Search.js'));
 
-//const SummaryPage = React.lazy(() => import('pages/Summary/SummaryPage'));
 const NotFoundPage = React.lazy(() => import('pages/NotFoundPage'));
-const RootRedirect = () => <Redirect to="/posts" />;
+
+const RootRedirect = () => <Redirect to="/search" />;
 const NotFoundRedirect = () => <Redirect to="/not-found" />;
 
 class App extends React.Component {
@@ -40,9 +42,11 @@ class App extends React.Component {
             <React.Suspense fallback={<PageSpinner />}>
               <Switch>
                 <Route exact path="/" component={RootRedirect} />
-                <Route exact path="/write" component={WritePosition} />
-                <Route exact path="/post" component={PostPosition} />
-                <Route exact path="/posts" component={PostsPosition} />
+                <Route exact path="/stat" component={Statistics} />
+                <Route exact path="/talent" component={Talenting} />
+                <Route exact path="/position" component={Positioning} />
+                <Route exact path="/setting" component={Setting} />
+                <Route exact path="/search" component={Search} />
 
                 <Route exact path="/not-found" component={NotFoundPage} />
                 <Route exact component={NotFoundRedirect} />
