@@ -1,9 +1,11 @@
 import React from 'react';
 import SearchBox from '../../components/recommend/SearchBox';
+import BestSelect, {
+  PositionsSelects,
+} from '../../components/common/RecomendBar';
 import DenseTable from '../../components/recommend/RecommendationTable';
-import Button from '../../components/common/Button';
-import SearchList from '../../components/recommend/SearchList';
-import AbilityGraph from '../../components/recommend/AbilityGraph';
+import AnimatedRadar from '../../components/recommend/RaderChart';
+import BasicTextFields from '../../components/recommend/InfomationList';
 import Chart from '../../components/recommend/ComparisonChart';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -60,18 +62,24 @@ const PostsPosition = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <h6 className={classes.h6}>검색결과: 개인정보</h6>
-            <SearchList />
+            <h6 className={classes.h6}>베스트 추천</h6>
+            {/*} <BestSelect />*/}
           </Paper>
-          <Paper className={classes.button}>
-            <Button className={classes.button}>추천</Button>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper style={{ fontWeight: 'normal' }}>
+            <AnimatedRadar />
+          </Paper>
+        </Grid>
+        <Grid item xs={9}>
+          <Paper className={classes.paper} style={{ height: '300px' }}>
+            <h6 className={classes.h6}>개인정보</h6>
+            <BasicTextFields />
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <h6 className={classes.h6}>추천</h6>
-            <AbilityGraph />
-            <SearchList />
+            <h6 className={classes.h6}>검색 결과</h6>
             <DenseTable />
           </Paper>
         </Grid>

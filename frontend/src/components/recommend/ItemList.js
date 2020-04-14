@@ -12,23 +12,28 @@ const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: '#8C7264',
     color: 'white',
-    fontSize: 18,
-    fontWeight: 'Bold',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   body: {
     color: '#BF947A',
-    fontSize: 16,
-    fontWeight: 'Bold',
+    fontSize: 14,
+    fontWeight: '200',
   },
 }))(TableCell);
 
 const StyledTableRow = withStyles(theme => ({
   root: {
     '&:nth-of-type(odd)': {
-      backgroundColor: '#F2DCC2',
+      backgroundColor: '',
     },
   },
 }))(TableRow);
+const useStyles = makeStyles({
+  table: {
+    minWidth: 200,
+  },
+});
 
 function createData(school, major, toeic, etc1, etc2) {
   return { school, major, toeic, etc1, etc2 };
@@ -37,12 +42,6 @@ function createData(school, major, toeic, etc1, etc2) {
 const rows = [
   createData('숭실대학교', '글로벌미디어학부', 990, '정보처리기사', 4.0),
 ];
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
 
 const ItemList = () => {
   const classes = useStyles();

@@ -12,7 +12,7 @@ const SearchForm = styled.form`
 border-radius: 4px;
 overflow: hidden;
 display: flex;
-width: 450px;
+width: 400px;
 border: 1px solid gray;
 background : white;
 button {

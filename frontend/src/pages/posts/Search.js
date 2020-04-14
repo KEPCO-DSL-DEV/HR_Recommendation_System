@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from '../../components/common/Header';
-import SearchBox from '../../components/recommend/SearchBox';
-import ItemList from '../../components/recommend/ItemList';
+import SearchBar from '../../components/common/SearchBar';
 import Button from '../../components/common/Button';
 import DenseTable from '../../components/recommend/RecommendationTable';
 
@@ -17,6 +15,11 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'right',
   },
+  bar: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    //justifyItems: 'center',
+  },
   h6: {
     padding: theme.spacing(1),
     textAlign: 'left',
@@ -24,12 +27,13 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
     fontWeight: 'bold',
+    textAlign: 'center',
+    justifyItems: 'center',
   },
 }));
 
-const EmployeeSearch = () => {
+const Search = () => {
   const classes = useStyles();
 
   return (
@@ -52,7 +56,15 @@ const EmployeeSearch = () => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paper}></Paper>
+          <Paper>
+            <SearchBar>전공</SearchBar>
+          </Paper>
+          <Paper className={classes.bar}>
+            직군 <SearchBar>직군</SearchBar>
+          </Paper>
+          <Paper className={classes.button}>
+            <Button>검색</Button>
+          </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
@@ -65,4 +77,4 @@ const EmployeeSearch = () => {
   );
 };
 
-export default EmployeeSearch;
+export default Search;

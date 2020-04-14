@@ -78,17 +78,17 @@ const DATA = [
     performance: 1.5,
     interior: 4,
     warranty: 4.5,
-    fill: 'rgba(114,172,240,0.5)',
-    stroke: 'rgba(114,172,240,0.2)',
+    fill: 'rgba(242, 76, 39,0.5)',
+    stroke: 'rgba(242, 76, 39,0.2)',
   },
 ];
 
 const tipStyle = {
   display: 'flex',
-  color: '#fff',
+  color: '',
   background: '#000',
   alignItems: 'center',
-  padding: '5px',
+  padding: '10px',
 };
 
 class AbilityGraph extends Component {
@@ -126,8 +126,8 @@ class AbilityGraph extends Component {
           { name: 'interior', domain: [0, 5], getValue: d => d.interior },
           { name: 'warranty', domain: [0, 5], getValue: d => d.warranty },
         ]}
-        width={300}
-        height={300}
+        width={200}
+        height={200}
         onValueMouseOver={v => {
           this.setState({ hoveredCell: v });
         }}
