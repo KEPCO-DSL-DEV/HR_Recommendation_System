@@ -9,6 +9,7 @@ const Footer = () => {
     <Navbar>
       <Nav className="w-100" navbar>
         <NavItem className="text-right">
+          Designed by minqsim <br />
           2020 KEPCO Data Sience Lab.
         </NavItem>
       </Nav>

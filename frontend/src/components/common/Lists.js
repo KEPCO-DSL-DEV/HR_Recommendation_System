@@ -128,33 +128,36 @@ export const SettingList = () => {
   return (
     <TableContainer component={Paper} className={classes.setting}>
       <Table className={classes.setting}>
-        <TableBody>
-          <TableRow>
-            <TableCell className={classes.head}>학교</TableCell>
-            <TableCell align="right">schoolName</TableCell>
-            <TableCell align="right">다중선택</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.head}>전공</TableCell>
-            <TableCell align="right">majorName</TableCell>
-            <TableCell align="right">다중선택</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.head}>학점</TableCell>
-            <TableCell align="right">schooScore</TableCell>
-            <TableCell align="right">다중선택</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.head}>어학</TableCell>
-            <TableCell align="right">language</TableCell>
-            <TableCell align="right">다중선택</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.head}>자격증</TableCell>
-            <TableCell align="right">certificate</TableCell>
-            <TableCell align="right">다중선택</TableCell>
-          </TableRow>
-        </TableBody>
+        {samples.map(row => (
+          <TableBody>
+            <TableRow>
+              <TableCell className={classes.head}>학교</TableCell>
+              <TableCell align="right">{row.schoolName}</TableCell>
+              <TableCell align="right">다중선택</TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className={classes.head}>전공</TableCell>
+              <TableCell align="right">{row.majorName}</TableCell>
+              <TableCell align="right">다중선택</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className={classes.head}>학점</TableCell>
+              <TableCell align="right">{row.majorScore}</TableCell>
+              <TableCell align="right">다중선택</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className={classes.head}>어학</TableCell>
+              <TableCell align="right">{row.language}</TableCell>
+              <TableCell align="right">다중선택</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className={classes.head}>자격증</TableCell>
+              <TableCell align="right">{row.certificate}</TableCell>
+              <TableCell align="right">다중선택</TableCell>
+            </TableRow>
+          </TableBody>
+        ))}
       </Table>
     </TableContainer>
   );
