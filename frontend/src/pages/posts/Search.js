@@ -1,7 +1,8 @@
 import React from 'react';
+
 import SearchBar from '../../components/common/SearchBar';
 import Button from '../../components/common/Button';
-import DenseTable from '../../components/recommend/RecommendationTable';
+import TotalInfoList from '../../components/common/Lists';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -9,16 +10,11 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 0.5,
+    flexGrow: 1,
   },
   button: {
     padding: theme.spacing(2),
     textAlign: 'right',
-  },
-  bar: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    //justifyItems: 'center',
   },
   h6: {
     padding: theme.spacing(1),
@@ -27,9 +23,8 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    fontWeight: 'bold',
     textAlign: 'center',
-    justifyItems: 'center',
+    fontWeight: 'bold',
   },
 }));
 
@@ -56,20 +51,22 @@ const Search = () => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper>
-            <SearchBar>전공</SearchBar>
-          </Paper>
-          <Paper className={classes.bar}>
-            직군 <SearchBar>직군</SearchBar>
-          </Paper>
-          <Paper className={classes.button}>
-            <Button>검색</Button>
+          <Paper className={classes.paper}>
+            <h6 className={classes.h6}>조건 검색</h6>
+            <SearchBar inputName="전공" />
+            <p />
+            <SearchBar inputName="어학" />
+            <p />
+            <SearchBar inputName="자격증" />
+            <p className={classes.button}>
+              <Button>검색</Button>
+            </p>
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <h6 className={classes.h6}>검색 결과</h6>
-            <DenseTable />
+            <TotalInfoList />
           </Paper>
         </Grid>
       </Grid>

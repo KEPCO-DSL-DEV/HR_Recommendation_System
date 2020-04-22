@@ -1,11 +1,7 @@
 import React from 'react';
-import SearchBox from '../../components/recommend/SearchBox';
-import BestSelect, {
-  PositionsSelects,
-} from '../../components/common/RecomendBar';
-import DenseTable from '../../components/recommend/RecommendationTable';
+import SearchBar from '../../components/common/SearchBar';
+import TotalInfoList, { BasicInfo } from '../../components/common/Lists';
 import AnimatedRadar from '../../components/recommend/RaderChart';
-import BasicTextFields from '../../components/recommend/InfomationList';
 import Chart from '../../components/recommend/ComparisonChart';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 0.5,
+    flexGrow: 1,
   },
   button: {
     padding: theme.spacing(2),
@@ -32,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const PostsPosition = () => {
+const Positioning = () => {
   const classes = useStyles();
 
   return (
@@ -57,13 +53,12 @@ const PostsPosition = () => {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <h6 className={classes.h6}>인재 선택</h6>
-            <SearchBox></SearchBox>
+            <SearchBar inputName="사번을 입력해주세요" labelName="Id" />
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <h6 className={classes.h6}>베스트 추천</h6>
-            {/*} <BestSelect />*/}
           </Paper>
         </Grid>
         <Grid item xs={3}>
@@ -74,13 +69,13 @@ const PostsPosition = () => {
         <Grid item xs={9}>
           <Paper className={classes.paper} style={{ height: '300px' }}>
             <h6 className={classes.h6}>개인정보</h6>
-            <BasicTextFields />
+            <BasicInfo />
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <h6 className={classes.h6}>검색 결과</h6>
-            <DenseTable />
+            <TotalInfoList />
           </Paper>
         </Grid>
         <Grid item xs={12}>
@@ -94,4 +89,4 @@ const PostsPosition = () => {
   );
 };
 
-export default PostsPosition;
+export default Positioning;

@@ -1,10 +1,7 @@
 import React from 'react';
-import BestSelect, {
-  PositionsSelects,
-} from '../../components/common/RecomendBar';
-import DenseTable from '../../components/recommend/RecommendationTable';
+import { PositionsSelects } from '../../components/common/SearchBar';
+import TotalInfoList, { BasicInfo } from '../../components/common/Lists';
 import AnimatedRadar from '../../components/recommend/RaderChart';
-import BasicTextFields from '../../components/recommend/InfomationList';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -15,11 +12,11 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   button: {
-    padding: theme.spacing(0),
+    padding: theme.spacing(2),
     textAlign: 'right',
   },
   h6: {
-    padding: theme.spacing(0),
+    padding: theme.spacing(1),
     textAlign: 'left',
     fontWeight: 'bold',
   },
@@ -33,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const EmployeeSearch = () => {
+const Talenting = () => {
   const classes = useStyles();
 
   return (
@@ -64,7 +61,6 @@ const EmployeeSearch = () => {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <h6 className={classes.h6}>베스트 추천</h6>
-            {/*} <BestSelect />*/}
           </Paper>
         </Grid>
         <Grid item xs={3}>
@@ -75,13 +71,13 @@ const EmployeeSearch = () => {
         <Grid item xs={9}>
           <Paper className={classes.paper} style={{ height: '300px' }}>
             <h6 className={classes.h6}>개인정보</h6>
-            <BasicTextFields />
+            <BasicInfo />
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <h6 className={classes.h6}>검색 결과</h6>
-            <DenseTable />
+            <TotalInfoList />
           </Paper>
         </Grid>
       </Grid>
@@ -89,4 +85,4 @@ const EmployeeSearch = () => {
   );
 };
 
-export default EmployeeSearch;
+export default Talenting;

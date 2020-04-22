@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '../../components/common/Header';
-import SearchBox from '../../components/recommend/SearchBox';
-import ItemList from '../../components/recommend/ItemList';
+import SearchBar from '../../components/common/SearchBar';
+import { SettingList } from '../../components/common/Lists';
 import Button from '../../components/common/Button';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,20 +9,25 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 0.5,
+    flexGrow: 1,
+  },
+  button: {
+    padding: theme.spacing(2),
+    textAlign: 'right',
+  },
+  h6: {
+    padding: theme.spacing(1),
+    textAlign: 'left',
+    fontWeight: 'bold',
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  button: {
-    padding: theme.spacing(2),
-    textAlign: 'right',
-  },
 }));
 
-const PostsPosition = () => {
+const Setting = () => {
   const classes = useStyles();
 
   return (
@@ -47,20 +51,20 @@ const PostsPosition = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <SearchBox />
+            <h6 className={classes.h6}>보직 선택</h6>
+            <SearchBar inputName="보직을 입력해주세요" />
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <ItemList />
+            <h6 className={classes.h6}>인재상</h6>
+            <SettingList />
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.button}>
             <Button>변경</Button>
-            <p>
-              <b>(모델생성)</b>
-            </p>
+            <p>(모델생성)</p>
           </Paper>
         </Grid>
       </Grid>
@@ -68,4 +72,4 @@ const PostsPosition = () => {
   );
 };
 
-export default PostsPosition;
+export default Setting;
