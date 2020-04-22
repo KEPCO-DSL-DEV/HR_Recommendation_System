@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { ActivePieChart, SimpleBar } from '../../components/recommend/Recharts';
+import { ActivePieChart, SimpleBar } from '../../components/common/Recharts';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,6 +21,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     fontWeight: 'bold',
+    margin: 'auto',
   },
   firstChild: {
     backgroundSize: '300',
@@ -56,6 +57,7 @@ const Statistics = () => {
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
+            최종학력
             <ActivePieChart />
           </Paper>
         </Grid>

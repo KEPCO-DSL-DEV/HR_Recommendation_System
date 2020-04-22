@@ -1,8 +1,10 @@
 import React from 'react';
 import SearchBar from '../../components/common/SearchBar';
 import TotalInfoList, { BasicInfo } from '../../components/common/Lists';
-import AnimatedRadar from '../../components/recommend/RaderChart';
-import Chart from '../../components/recommend/ComparisonChart';
+import {
+  AbilityChart,
+  SimpleLineChart,
+} from '../../components/common/Recharts';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -63,7 +65,7 @@ const Positioning = () => {
         </Grid>
         <Grid item xs={3}>
           <Paper style={{ fontWeight: 'normal' }}>
-            <AnimatedRadar />
+            <AbilityChart />
           </Paper>
         </Grid>
         <Grid item xs={9}>
@@ -81,7 +83,17 @@ const Positioning = () => {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <h6 className={classes.h6}>보직 평균과 비교</h6>
-            <Chart />
+          </Paper>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            <SimpleLineChart />
+          </Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            <SimpleLineChart />
           </Paper>
         </Grid>
       </Grid>

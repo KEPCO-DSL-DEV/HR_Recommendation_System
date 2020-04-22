@@ -85,6 +85,7 @@ const TotalInfoList = () => {
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
+            <TableCell align="center">순번 </TableCell>
             <TableCell align="center">부서</TableCell>
             <TableCell align="center">총 적합도</TableCell>
             <TableCell align="center">학력 적합도</TableCell>
@@ -104,6 +105,7 @@ const TotalInfoList = () => {
               </TableCell>
               <TableCell align="right">{row.department}</TableCell>
               <TableCell align="right">{row.totalScore}</TableCell>
+              <TableCell align="right">{row.schoolScore}</TableCell>
               <TableCell align="right">{row.majorScore}</TableCell>
               <TableCell align="right">{row.schoolName}</TableCell>
               <TableCell align="right">{row.language}</TableCell>

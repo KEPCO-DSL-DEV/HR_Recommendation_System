@@ -1,7 +1,7 @@
 import React from 'react';
 import { PositionsSelects } from '../../components/common/SearchBar';
 import TotalInfoList, { BasicInfo } from '../../components/common/Lists';
-import AnimatedRadar from '../../components/recommend/RaderChart';
+import { AbilityChart } from '../../components/common/Recharts';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -65,7 +65,7 @@ const Talenting = () => {
         </Grid>
         <Grid item xs={3}>
           <Paper style={{ fontWeight: 'normal' }}>
-            <AnimatedRadar />
+            <AbilityChart />
           </Paper>
         </Grid>
         <Grid item xs={9}>
